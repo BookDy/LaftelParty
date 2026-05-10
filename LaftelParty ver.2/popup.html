@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 260px;
+            padding: 15px;
+            font-family: sans-serif;
+            background-color: #f9f9fb;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #816bff;
+            margin: 0 0 5px 0;
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            margin-top : 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #createBtn {
+            background-color: #816bff;
+        }
+
+        #joinBtn {
+            background-color: #4a3bcf;
+        }
+
+        #leaveBtn {
+            background-color: #ff4d4d;
+            margin-top: 10px;
+        }
+
+        #URLCopyBtn {
+            background-color: #816bff;
+            margin-top: 10px;
+        }
+
+        #msg {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        /* 상태창 스타일 */
+        #status-area {
+            display: none;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #816bff;
+        }
+
+        .info-label {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Laftel Party</h2>
+
+        <div id="input-area">
+            <div class="container">
+                <input type="text" id="serverURL" placeholder="서버 주소 (https://...)">
+                <!--<input type="text" id="roomName" placeholder="방 이름"> 잠시 스킵-->
+                <!--<input type="password" id="roomPw" placeholder="비밀번호">잠시 스킵-->
+                <div class="btn-group">
+                    <button id="createBtn">방 만들기</button>
+                    <!--<button id="joinBtn">참여하기</button> 방참가는 URL로 대체.-->
+                </div>
+        </div>
+        </div>
+
+    <div id="status-area">
+        <div class="info-label">현재 상영물</div>
+        <div id="display-anime" class="info-value" style="color: #816bff;">-</div>
+
+                    <!--<div class="info-label">연결된 서버</div>-->
+                    <div class="info-label">방 주소</div>
+                    <div id="display-url" class="info-value">-</div>
+
+                    <!--<div class="info-label">접속 중인 방</div>-->
+                    <!--<div id="display-room" class="info-value">-</div>-->
+                    <div id="display-role" style="text-align:center; font-size:12px; color:#816bff; margin-bottom:10px;">접속 중...</div>
+
+                    <!--<button id="leaveBtn">접속 해제</button>-->
+                    <div class="btn-group">
+                        <button id="leaveBtn">접속 해제</button>
+                        <button id="URLCopyBtn">주소 복사</button>
+                    </div>
+                </div>
+
+            <div id="msg"></div>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+    </html>
