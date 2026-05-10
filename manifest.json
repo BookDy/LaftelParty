@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "라프텔 파티 (Laftel Party)",
+  "version": "1.0.0",
+  "description": "친구들과 함께 라프텔 애니메이션을 실시간으로 감상하세요.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "*://*.laftel.net/*" ],
+      "js": [ "content.js" ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.laftel.net/*",
+    "http://localhost/*"
+  ]
+}
